@@ -30,10 +30,10 @@ int main()
     node->printList(node);
     // არის თუ არა სია ცარიელი?
     (node->isEmpty(node)) ? cout << "Linked list is empty!" : cout << "Linked list is not empty!";
-    // არის თუ არა 15 da 5 სიაში?
+    // არის თუ არა 15 და 5 სიაში?
     (node->search(node, 15)) ? cout << "\n15 is in a linked list " : cout << "\n15 isn't in a linked list ";
     (node->search(node, 5)) ? cout << "\n5 is in a linked list " : cout << "\n5 isn't in a linked list ";
-    // call copy constuctor
+    // ვიძახებთ copy constuctor - ს
     Staque* node2 = node;
     cout << "\nCalling copy constuctor... after creating second doubly linked list it has elements: ";
     node2->printList(node2);
