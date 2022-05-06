@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 // კონსტრუქტორების, დესტრუქტორების და კლასის ფუნქციების იმპლემენტაცია
-// 
+
 // default კონსტრუქტორი
 Staque::Staque() = default;
 // კონსტრუქტორი(კოპირების)
@@ -12,7 +12,7 @@ Staque::Staque(Staque & secondList) {
 	}
 	else
 	{
-		Staque* curr = secondList.head; 
+		Staque* curr = secondList.head;
 		head = tail = new Staque;
 		head->prev = NULL;
 		head->data = curr->data;
@@ -20,12 +20,11 @@ Staque::Staque(Staque & secondList) {
 		if (curr == NULL)
 			head->next = NULL;
 		else {
-			Staque* curr2 = head; 
+			Staque* curr2 = head;
 			while (curr != NULL) {
 				curr2->next = new Staque;
 				curr2->next->prev = curr2;
 				curr2 = curr2->next;
-
 				curr2->data = curr->data;
 				curr = curr->next;
 			}
@@ -35,7 +34,14 @@ Staque::Staque(Staque & secondList) {
 	}
 }
 // დესტრუქტორი
-Staque::~Staque() = default;
+Staque::~Staque() {
+	Staque* newptr = head;
+	while (head != NULL) {
+		newptr = head;
+		head = head->next;
+		delete newptr;
+	}
+}
 // ელემენტის ჩამატება
 void Staque::add(Staque * *head_ref, int new_data) {
 	// თუ ლუწია ვამატებ სიის წინ (ფუნცქიის ალგორითმის დრო არის O(1))
@@ -67,7 +73,7 @@ void Staque::add(Staque * *head_ref, int new_data) {
 		while (last->next != NULL) { // გადავა ბოლო Node - ამდე
 			last = last->next;
 		}
-		// 6. შეცვალეთ ბოლო კვანძის შემდგომი 
+		// 6. შეცვალე ბოლო კვანძის შემდგომი 
 		last->next = new_node;
 		return;
 	}

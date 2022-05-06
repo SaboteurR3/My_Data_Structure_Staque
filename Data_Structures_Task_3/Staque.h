@@ -1,5 +1,5 @@
 ﻿#pragma once
-// Staque იმპლემენტაციისთვის გამოვიყენე ორმხრივად ბმული სია(Doubly Linked List)
+// Staque - ს იმპლემენტაციისთვის გამოვიყენე ორმხრივად ბმული სია(Doubly Linked List)
 class Staque {
 private:
 	int data;
