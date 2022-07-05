@@ -1,6 +1,6 @@
 # My_Data_Structure_Staque
 
-I Create a data structure called “Staque” which can store only integers. 
+Data structure called “Staque” which can store only integers. 
 
 The way Staque works is as follows:
 
